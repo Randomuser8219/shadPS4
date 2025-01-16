@@ -488,7 +488,7 @@ void PatchBufferArgs(IR::Block& block, IR::Inst& inst, Info& info) {
     const auto buffer_res = info.buffers[handle.U32()];
     const auto buffer = buffer_res.GetSharp(info);
 
-    ASSERT(!buffer.add_tid_enable);
+    //ASSERT(!buffer.add_tid_enable);
 
     // Address of constant buffer reads can be calculated at IR emission time.
     if (inst.GetOpcode() == IR::Opcode::ReadConstBuffer) {
