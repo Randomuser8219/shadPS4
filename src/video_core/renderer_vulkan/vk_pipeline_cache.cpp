@@ -498,7 +498,7 @@ bool PipelineCache::RefreshComputeKey() {
     Shader::Backend::Bindings binding{};
     const auto& cs_pgm = liverpool->GetCsRegs();
     const auto cs_params = Liverpool::GetParams(cs_pgm);
-    if(cs_params.hash == 0x9521885c30e19f67, 0xb3ee396927a8c5ea) return false;
+    if(cs_params.hash == 0x9521885c30e19f67) return false;
     std::tie(infos[0], modules[0], fetch_shader, compute_key.value) =
         GetProgram(Shader::Stage::Compute, LogicalStage::Compute, cs_params, binding);
     return true;
