@@ -224,7 +224,6 @@ PipelineCache::~PipelineCache() = default;
 
 bool ShouldSkipShader(u64 shader_hash, const char* shader_type) {
     static std::vector<u64> skip_hashes = {
-        0x40fb25913cebb787,
         0xaeb16668b6d39d57,
         0xaeb166682bae95e1,
         0xaeb16668a415ee41,
