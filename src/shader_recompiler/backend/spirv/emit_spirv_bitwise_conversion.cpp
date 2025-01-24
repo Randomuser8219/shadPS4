@@ -58,4 +58,34 @@ Id EmitUnpackHalf2x16(EmitContext& ctx, Id value) {
     return ctx.OpUnpackHalf2x16(ctx.F32[2], value);
 }
 
+Id EmitPackUnorm2x16(EmitContext& ctx, Id value) {
+    return ctx.OpPackUnorm2x16(ctx.U32[1], value);
+}
+
+Id EmitUnpackUnorm2x16(EmitContext& ctx, Id value) {
+    return ctx.OpUnpackUnorm2x16(ctx.F32[2], value);
+}
+
+Id EmitPackSnorm2x16(EmitContext& ctx, Id value) {
+    return ctx.OpPackSnorm2x16(ctx.U32[1], value);
+}
+
+Id EmitUnpackSnorm2x16(EmitContext& ctx, Id value) {
+    return ctx.OpUnpackSnorm2x16(ctx.F32[2], value);
+}
+
+Id EmitUnpackUint2x16(EmitContext& ctx, Id value) {
+    // No SPIR-V instruction for this, do it manually.
+    const auto x{ctx.OpBitFieldUExtract(ctx.U32[1], value, ctx.ConstU32(0U), ctx.ConstU32(16U))};
+    const auto y{ctx.OpBitFieldUExtract(ctx.U32[1], value, ctx.ConstU32(16U), ctx.ConstU32(16U))};
+    return ctx.OpCompositeConstruct(ctx.U32[2], x, y);
+}
+
+Id EmitUnpackSint2x16(EmitContext& ctx, Id value) {
+    // No SPIR-V instruction for this, do it manually.
+    const auto x{ctx.OpBitFieldSExtract(ctx.U32[1], value, ctx.ConstU32(0U), ctx.ConstU32(16U))};
+    const auto y{ctx.OpBitFieldSExtract(ctx.U32[1], value, ctx.ConstU32(16U), ctx.ConstU32(16U))};
+    return ctx.OpCompositeConstruct(ctx.U32[2], x, y);
+}
+
 } // namespace Shader::Backend::SPIRV
