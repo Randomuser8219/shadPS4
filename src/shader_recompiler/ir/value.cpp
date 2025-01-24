@@ -132,6 +132,7 @@ std::size_t hash<Shader::IR::Value>::operator()(const Shader::IR::Value& v) cons
     case Type::U64:
     case Type::F64:
         return HashCombine(static_cast<u64>(v.imm_u64), h);
+    case Type::StringLiteral:
     case Type::U32x2:
     case Type::U32x3:
     case Type::U32x4:
