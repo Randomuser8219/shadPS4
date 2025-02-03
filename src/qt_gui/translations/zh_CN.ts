@@ -52,7 +52,7 @@
 		</message>
 		<message>
 			<source>Select which directory you want to install to.</source>
-			<translation>选择你想要安装到的目录。</translation>
+			<translation>选择您想要安装到的目录。</translation>
 		</message>
 	</context>
 	<context>
@@ -186,7 +186,7 @@
 		</message>
 		<message>
 			<source>requiresEnableSeparateUpdateFolder_MSG</source>
-			<translation>这个功能需要“启用单独的更新目录”配置选项才能正常运行，如果你想要使用这个功能，请启用它。</translation>
+			<translation>这个功能需要“启用单独的更新目录”配置选项才能正常运行，如果您想要使用这个功能，请启用它。</translation>
 		</message>
 		<message>
 			<source>This game has no update to delete!</source>
@@ -210,7 +210,7 @@
 		</message>
 		<message>
 			<source>Are you sure you want to delete %1's %2 directory?</source>
-			<translation>你确定要删除 %1 的%2目录？</translation>
+			<translation>您确定要删除 %1 的%2目录？</translation>
 		</message>
 	</context>
 	<context>
@@ -701,6 +701,27 @@
 			<translation>启用 RenderDoc 调试</translation>
 		</message>
 		<message>
+			<source>Enable Crash Diagnostics</source>
+			<translation>启用崩溃诊断</translation>
+		</message>
+		<message>
+			<source>Collect Shaders</source>
+			<translation>收集着色器</translation>
+		</message>
+		<message>
+			<source>Copy GPU Buffers</source>
+			<translation>复制 GPU 缓冲区</translation>
+		</message>
+		<message>
+			<source>Host Debug Markers</source>
+			<translation>Host 调试标记</translation>
+		</message>
+		<message>
+			<source>Guest Debug Markers</source>
+			<translation>Geust 调试标记</translation>
+		</message>
+	
+		<message>
 			<source>Update</source>
 			<translation>更新</translation>
 		</message>
@@ -719,6 +740,10 @@
 		<message>
 			<source>GUI Settings</source>
 			<translation>界面设置</translation>
+		</message>
+		<message>
+			<source>Title Music</source>
+			<translation>Title Music</translation>
 		</message>
 		<message>
 			<source>Disable Trophy Pop-ups</source>
@@ -927,6 +952,26 @@
 		<message>
 			<source>rdocCheckBox</source>
 			<translation>启用 RenderDoc 调试:\n启用后模拟器将提供与 Renderdoc 的兼容性，允许在渲染过程中捕获和分析当前渲染的帧。</translation>
+		</message>
+        <message>
+			<source>collectShaderCheckBox</source>
+			<translation>收集着色器：\n您需要启用此功能才能使用调试菜单（Ctrl + F10）编辑着色器。</translation>
+		</message>
+		<message>
+			<source>crashDiagnosticsCheckBox</source>
+			<translation>崩溃诊断：\n创建一个包含崩溃时 Vulkan 状态的 .yaml 文件。\n对于调试“Device lost”错误很有用。如果您启用了此功能，您应该同时启用 Host 和 Guest 调试标记。\n此功能在 Intel 显卡上不可用。\n您需要启用 Vulkan 验证层并安装 Vulkan SDK 才能使用此功能。</translation>
+		</message>
+		<message>
+			<source>copyGPUBuffersCheckBox</source>
+			<translation>复制 GPU 缓冲区：\n绕过涉及 GPU 提交的竞态条件。\n对于 PM4 type 0 崩溃可能有帮助，也可能没有帮助。</translation>
+		</message>
+		<message>
+			<source>hostMarkersCheckBox</source>
+			<translation>Host 调试标记：\n在 Vulkan 命令周围插入模拟器端信息，如特定 AMD GPU 命令的标记，以及为资源提供调试名称。\n如果您已启用此功能，应同时启用崩溃诊断。\n对 RenderDoc 等程序很有用。</translation>
+		</message>
+		<message>
+			<source>guestMarkersCheckBox</source>
+			<translation>Guest 调试标记：\n在命令缓冲区中插入游戏本身添加的任何调试标记。\n如果您已启用此功能，应同时启用崩溃诊断。\n对 RenderDoc 等程序很有用。</translation>
 		</message>
 		<message>
 			<source>saveDataBox</source>
@@ -1240,7 +1285,7 @@
 		</message>
 		<message>
 			<source>Game can be completed with playable performance and no major glitches</source>
-			<translation>游戏能在可玩的性能下完成且没有重大 Bug</translation>
+			<translation>游戏能在可玩的性能下通关且没有重大 Bug</translation>
 		</message>
 	</context>
 	<context>
@@ -1367,6 +1412,33 @@
 		<message>
 			<source>TB</source>
 			<translation>TB</translation>
+		</message>
+	</context>
+	<context>
+		<name>CompatibilityInfoClass</name>
+		<message>
+			<source>Unknown</source>
+			<translation>未知</translation>
+		</message>
+		<message>
+			<source>Nothing</source>
+			<translation>无法启动</translation>
+		</message>
+		<message>
+			<source>Boots</source>
+			<translation>可启动</translation>
+		</message>
+		<message>
+			<source>Menus</source>
+			<translation>可进入菜单</translation>
+		</message>
+		<message>
+			<source>Ingame</source>
+			<translation>可进入游戏内</translation>
+		</message>
+		<message>
+			<source>Playable</source>
+			<translation>可通关</translation>
 		</message>
 	</context>
 </TS>
