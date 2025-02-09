@@ -159,20 +159,27 @@ SettingsDialog::SettingsDialog(std::span<const QString> physical_devices,
                 });
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 7, 0))
-        connect(ui->enableCompatibilityCheckBox, &QCheckBox::stateChanged, this, [this](int state) {
+        connect(ui->enableCompatibilityCheckBox, &QCheckBox::stateChanged, this,
+                [this, m_compat_info](int state) {
 #else
         connect(ui->enableCompatibilityCheckBox, &QCheckBox::checkStateChanged, this,
-                [this](Qt::CheckState state) {
+                [this, m_compat_info](Qt::CheckState state) {
 #endif
-            Config::setCompatibilityEnabled(state);
-            emit CompatibilityChanged();
-        });
+                    Config::setCompatibilityEnabled(state);
+                    if (state) {
+                        m_compat_info->LoadCompatibilityFile();
+                    }
+                    emit CompatibilityChanged();
+                });
     }
 
     // Gui TAB
     {
         connect(ui->chooseHomeTabComboBox, &QComboBox::currentTextChanged, this,
                 [](const QString& hometab) { Config::setChooseHomeTab(hometab.toStdString()); });
+
+        connect(ui->showBackgroundImageCheckBox, &QCheckBox::stateChanged, this,
+                [](int state) { Config::setShowBackgroundImage(state == Qt::Checked); });
     }
     // Input TAB
     {
@@ -251,6 +258,7 @@ SettingsDialog::SettingsDialog(std::span<const QString> physical_devices,
 #ifdef ENABLE_UPDATER
         ui->updaterGroupBox->installEventFilter(this);
 #endif
+        ui->GUIBackgroundImageGroupBox->installEventFilter(this);
         ui->GUIMusicGroupBox->installEventFilter(this);
         ui->disableTrophycheckBox->installEventFilter(this);
         ui->enableCompatibilityCheckBox->installEventFilter(this);
@@ -269,6 +277,7 @@ SettingsDialog::SettingsDialog(std::span<const QString> physical_devices,
         ui->heightDivider->installEventFilter(this);
         ui->dumpShadersCheckBox->installEventFilter(this);
         ui->nullGpuCheckBox->installEventFilter(this);
+        ui->enableHDRCheckBox->installEventFilter(this);
 
         // Paths
         ui->gameFoldersGroupBox->installEventFilter(this);
@@ -338,6 +347,7 @@ void SettingsDialog::LoadValuesFromConfig() {
     ui->vblankSpinBox->setValue(toml::find_or<int>(data, "GPU", "vblankDivider", 1));
     ui->dumpShadersCheckBox->setChecked(toml::find_or<bool>(data, "GPU", "dumpShaders", false));
     ui->nullGpuCheckBox->setChecked(toml::find_or<bool>(data, "GPU", "nullGpu", false));
+    ui->enableHDRCheckBox->setChecked(toml::find_or<bool>(data, "General", "allowHDR", false));
     ui->playBGMCheckBox->setChecked(toml::find_or<bool>(data, "General", "playBGM", false));
     ui->disableTrophycheckBox->setChecked(
         toml::find_or<bool>(data, "General", "isTrophyPopupDisabled", false));
@@ -410,6 +420,8 @@ void SettingsDialog::LoadValuesFromConfig() {
 
     ui->removeFolderButton->setEnabled(!ui->gameFoldersListWidget->selectedItems().isEmpty());
     ResetInstallFolders();
+    ui->backgroundImageOpacitySlider->setValue(Config::getBackgroundImageOpacity());
+    ui->showBackgroundImageCheckBox->setChecked(Config::getShowBackgroundImage());
 }
 
 void SettingsDialog::InitializeEmulatorLanguages() {
@@ -504,8 +516,12 @@ void SettingsDialog::updateNoteTextEdit(const QString& elementName) {
     } else if (elementName == "updaterGroupBox") {
         text = tr("updaterGroupBox");
 #endif
+    } else if (elementName == "GUIBackgroundImageGroupBox") {
+        text = tr("GUIBackgroundImageGroupBox");
     } else if (elementName == "GUIMusicGroupBox") {
         text = tr("GUIMusicGroupBox");
+    } else if (elementName == "enableHDRCheckBox") {
+        text = tr("enableHDRCheckBox");
     } else if (elementName == "disableTrophycheckBox") {
         text = tr("disableTrophycheckBox");
     } else if (elementName == "enableCompatibilityCheckBox") {
@@ -606,6 +622,7 @@ void SettingsDialog::UpdateSettings() {
     Config::setIsMotionControlsEnabled(ui->motionControlsCheckBox->isChecked());
     Config::setisTrophyPopupDisabled(ui->disableTrophycheckBox->isChecked());
     Config::setPlayBGM(ui->playBGMCheckBox->isChecked());
+    Config::setAllowHDR(ui->enableHDRCheckBox->isChecked());
     Config::setLogType(ui->logTypeComboBox->currentText().toStdString());
     Config::setLogFilter(ui->logFilterLineEdit->text().toStdString());
     Config::setUserName(ui->userNameLineEdit->text().toStdString());
@@ -638,6 +655,9 @@ void SettingsDialog::UpdateSettings() {
     Config::setChooseHomeTab(ui->chooseHomeTabComboBox->currentText().toStdString());
     Config::setCompatibilityEnabled(ui->enableCompatibilityCheckBox->isChecked());
     Config::setCheckCompatibilityOnStartup(ui->checkCompatibilityOnStartupCheckBox->isChecked());
+    Config::setBackgroundImageOpacity(ui->backgroundImageOpacitySlider->value());
+    emit BackgroundOpacityChanged(ui->backgroundImageOpacitySlider->value());
+    Config::setShowBackgroundImage(ui->showBackgroundImageCheckBox->isChecked());
 
 #ifdef ENABLE_DISCORD_RPC
     auto* rpc = Common::Singleton<DiscordRPCHandler::RPC>::Instance();

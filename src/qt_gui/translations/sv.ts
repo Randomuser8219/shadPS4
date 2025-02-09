@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
-    	<!-- SPDX-FileCopyrightText: Copyright 2024 shadPS4 Emulator Project
+	<!-- SPDX-FileCopyrightText: Copyright 2025 shadPS4 Emulator Project
          SPDX-License-Identifier: GPL-2.0-or-later -->
 <context>
     <name>AboutDialog</name>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>Incompatibility Notice</source>
-        <translation>Inkompatibilitetsmeddelande</translation>
+        <translation>Meddelande om inkompatibilitet</translation>
     </message>
     <message>
         <source>Failed to open file:</source>
@@ -359,6 +359,10 @@
         <source>Failed to create the update script file</source>
         <translation>Misslyckades med att skapa uppdateringsskriptfil</translation>
     </message>
+    <message>
+        <source>Error_Github_limit_MSG</source>
+        <translation>Den automatiska uppdateraren tillåter upp till 60 uppdateringskontroller per timme.\nDu har uppnått denna gräns. Försök igen senare</translation>
+    </message>
 </context>
 <context>
     <name>CompatibilityInfoClass</name>
@@ -384,7 +388,162 @@
     </message>
     <message>
         <source>Unable to open compatibility.json for writing.</source>
-        <translation>Kunde inte öppna compatibility.json för skrivning.</translation>
+        <translation type="vanished">Kunde inte öppna compatibility.json för skrivning.</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Okänt</translation>
+    </message>
+    <message>
+        <source>Nothing</source>
+        <translation>Ingenting</translation>
+    </message>
+    <message>
+        <source>Boots</source>
+        <translation>Startar upp</translation>
+    </message>
+    <message>
+        <source>Menus</source>
+        <translation>Menyer</translation>
+    </message>
+    <message>
+        <source>Ingame</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>Playable</source>
+        <translation>Spelbart</translation>
+    </message>
+    <message>
+        <source>Unable to open compatibility_data.json for writing.</source>
+        <translation>Kunde inte öppna compatibility_data.json för skrivning.</translation>
+    </message>
+</context>
+<context>
+    <name>ControlSettings</name>
+    <message>
+        <source>Configure Controls</source>
+        <translation>Konfigurera kontroller</translation>
+    </message>
+    <message>
+        <source>Control Settings</source>
+        <translation>Kontrollerinställningar</translation>
+    </message>
+    <message>
+        <source>D-Pad</source>
+        <translation>Riktningsknappar</translation>
+    </message>
+    <message>
+        <source>Up</source>
+        <translation>Upp</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vänster</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Höger</translation>
+    </message>
+    <message>
+        <source>Down</source>
+        <translation>Ner</translation>
+    </message>
+    <message>
+        <source>Left Stick Deadzone (def:2 max:127)</source>
+        <translation>Dödläge för vänster spak (standard:2 max:127)</translation>
+    </message>
+    <message>
+        <source>Left Deadzone</source>
+        <translation>Vänster dödläge</translation>
+    </message>
+    <message>
+        <source>Left Stick</source>
+        <translation>Vänster spak</translation>
+    </message>
+    <message>
+        <source>Config Selection</source>
+        <translation>Konfigurationsval</translation>
+    </message>
+    <message>
+        <source>Common Config</source>
+        <translation>Allmän konfiguration</translation>
+    </message>
+    <message>
+        <source>Use per-game configs</source>
+        <translation>Använd konfigurationer per spel</translation>
+    </message>
+    <message>
+        <source>L1 / LB</source>
+        <translation>L1 / LB</translation>
+    </message>
+    <message>
+        <source>L2 / LT</source>
+        <translation>L2 / LT</translation>
+    </message>
+    <message>
+        <source>KBM Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KBM Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Bakåt</translation>
+    </message>
+    <message>
+        <source>R1 / RB</source>
+        <translation>R1 / RB</translation>
+    </message>
+    <message>
+        <source>R2 / RT</source>
+        <translation>R2 / RT</translation>
+    </message>
+    <message>
+        <source>L3</source>
+        <translation>L3</translation>
+    </message>
+    <message>
+        <source>Options / Start</source>
+        <translation>Options / Start</translation>
+    </message>
+    <message>
+        <source>R3</source>
+        <translation>R3</translation>
+    </message>
+    <message>
+        <source>Face Buttons</source>
+        <translation>Handlingsknappar</translation>
+    </message>
+    <message>
+        <source>Triangle / Y</source>
+        <translation>Triangel / Y</translation>
+    </message>
+    <message>
+        <source>Square / X</source>
+        <translation>Fyrkant / X</translation>
+    </message>
+    <message>
+        <source>Circle / B</source>
+        <translation>Cirkel / B</translation>
+    </message>
+    <message>
+        <source>Cross / A</source>
+        <translation>Kryss / A</translation>
+    </message>
+    <message>
+        <source>Right Stick Deadzone (def:2, max:127)</source>
+        <translation>Dödläge för höger spak (standard:2, max:127)</translation>
+    </message>
+    <message>
+        <source>Right Deadzone</source>
+        <translation>Höger dödläge</translation>
+    </message>
+    <message>
+        <source>Right Stick</source>
+        <translation>Höger spak</translation>
     </message>
 </context>
 <context>
@@ -516,11 +675,15 @@
     </message>
     <message>
         <source>Click to go to issue</source>
-        <translation>Klicka för att gå till problem</translation>
+        <translation type="vanished">Klicka för att gå till problem</translation>
     </message>
     <message>
         <source>Last updated</source>
         <translation>Senast uppdaterad</translation>
+    </message>
+    <message>
+        <source>Click to see details on github</source>
+        <translation>Klicka för att se detaljer på Github</translation>
     </message>
 </context>
 <context>
@@ -700,6 +863,14 @@
         <source>Save Data</source>
         <translation>Sparat data</translation>
     </message>
+    <message>
+        <source>Copy Version</source>
+        <translation>Kopiera version</translation>
+    </message>
+    <message>
+        <source>Copy Size</source>
+        <translation>Kopiera storlek</translation>
+    </message>
 </context>
 <context>
     <name>InstallDirSelect</name>
@@ -756,7 +927,7 @@
     </message>
     <message>
         <source>Open shadPS4 Folder</source>
-        <translation>Open shadPS4 Folder</translation>
+        <translation>Öppna shadPS4-mapp</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -788,7 +959,7 @@
     </message>
     <message>
         <source>Medium</source>
-        <translation>Medel</translation>
+        <translation>Medelstora</translation>
     </message>
     <message>
         <source>Large</source>
@@ -860,19 +1031,19 @@
     </message>
     <message>
         <source>Dark</source>
-        <translation>Mörk</translation>
+        <translation>Mörkt</translation>
     </message>
     <message>
         <source>Light</source>
-        <translation>Ljus</translation>
+        <translation>Ljust</translation>
     </message>
     <message>
         <source>Green</source>
-        <translation>Grön</translation>
+        <translation>Grönt</translation>
     </message>
     <message>
         <source>Blue</source>
-        <translation>Blå</translation>
+        <translation>Blått</translation>
     </message>
     <message>
         <source>Violet</source>
@@ -880,7 +1051,7 @@
     </message>
     <message>
         <source>toolBar</source>
-        <translation>toolBar</translation>
+        <translation>Verktygsrad</translation>
     </message>
     <message>
         <source>Game List</source>
@@ -1085,6 +1256,10 @@
         <translation>Visa startskärm</translation>
     </message>
     <message>
+        <source>ps4proCheckBox</source>
+        <translation type="vanished">Är PS4 Pro:\nGör att emulatorn agerar som en PS4 PRO, vilket kan aktivera speciella funktioner i spel som har stöd för det</translation>
+    </message>
+    <message>
         <source>Enable Discord Rich Presence</source>
         <translation>Aktivera Discord Rich Presence</translation>
     </message>
@@ -1098,7 +1273,7 @@
     </message>
     <message>
         <source>Trophy</source>
-        <translation>Trofé</translation>
+        <translation>Troféer</translation>
     </message>
     <message>
         <source>Logger</source>
@@ -1122,15 +1297,15 @@
     </message>
     <message>
         <source>Cursor</source>
-        <translation>Pekare</translation>
+        <translation>Muspekare</translation>
     </message>
     <message>
         <source>Hide Cursor</source>
-        <translation>Dölj pekare</translation>
+        <translation>Dölj muspekare</translation>
     </message>
     <message>
         <source>Hide Cursor Idle Timeout</source>
-        <translation>Dölj pekare vid overksam</translation>
+        <translation>Dölj muspekare vid overksam</translation>
     </message>
     <message>
         <source>s</source>
@@ -1150,7 +1325,7 @@
     </message>
     <message>
         <source>Gui</source>
-        <translation>Gränssnitt</translation>
+        <translation type="vanished">Gränssnitt</translation>
     </message>
     <message>
         <source>User</source>
@@ -1174,7 +1349,7 @@
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="vanished">Avancerat</translation>
+        <translation>Avancerat</translation>
     </message>
     <message>
         <source>Enable Shaders Dumping</source>
@@ -1222,23 +1397,23 @@
     </message>
     <message>
         <source>Enable Crash Diagnostics</source>
-        <translation>Enable Crash Diagnostics</translation>
+        <translation>Aktivera kraschdiagnostik</translation>
     </message>
     <message>
         <source>Collect Shaders</source>
-        <translation>Collect Shaders</translation>
+        <translation>Samla shaders</translation>
     </message>
     <message>
         <source>Copy GPU Buffers</source>
-        <translation>Copy GPU Buffers</translation>
+        <translation>Kopiera GPU-buffertar</translation>
     </message>
     <message>
         <source>Host Debug Markers</source>
-        <translation>Host Debug Markers</translation>
+        <translation>Felsökningsmarkörer för värd</translation>
     </message>
     <message>
         <source>Guest Debug Markers</source>
-        <translation>Guest Debug Markers</translation>
+        <translation>Felsökningsmarkörer för gäst</translation>
     </message>
     <message>
         <source>Update</source>
@@ -1262,7 +1437,7 @@
     </message>
     <message>
         <source>Title Music</source>
-        <translation>Title Music</translation>
+        <translation>Titelmusik</translation>
     </message>
     <message>
         <source>Disable Trophy Pop-ups</source>
@@ -1310,7 +1485,7 @@
     </message>
     <message>
         <source>Point your mouse at an option to display its description.</source>
-        <translation>Peka din mus på ett alternativ för att visa dess beskrivning.</translation>
+        <translation>Flytta muspekaren till ett alternativ för att visa dess beskrivning.</translation>
     </message>
     <message>
         <source>consoleLanguageGroupBox</source>
@@ -1465,25 +1640,25 @@
         <translation>Aktivera RenderDoc-felsökning:\nOm aktiverad kommer emulatorn att tillhandahålla kompatibilitet med Renderdoc för att tillåta fångst och analys för aktuell renderad bildruta</translation>
     </message>
     <message>
-	    <source>collectShaderCheckBox</source>
-		<translation>Collect Shaders:\nYou need this enabled to edit shaders with the debug menu (Ctrl + F10).</translation>
-	</message>
-	<message>
-		<source>crashDiagnosticsCheckBox</source>
-		<translation>Crash Diagnostics:\nCreates a .yaml file with info about the Vulkan state at the time of crashing.\nUseful for debugging 'Device lost' errors. If you have this enabled, you should enable Host AND Guest Debug Markers.\nDoes not work on Intel GPUs.\nYou need Vulkan Validation Layers enabled and the Vulkan SDK for this to work.</translation>
-	</message>
-	<message>
-		<source>copyGPUBuffersCheckBox</source>
-		<translation>Copy GPU Buffers:\nGets around race conditions involving GPU submits.\nMay or may not help with PM4 type 0 crashes.</translation>
-	</message>
-	<message>
-		<source>hostMarkersCheckBox</source>
-		<translation>Host Debug Markers:\nInserts emulator-side information like markers for specific AMDGPU commands around Vulkan commands, as well as giving resources debug names.\nIf you have this enabled, you should enable Crash Diagnostics.\nUseful for programs like RenderDoc.</translation>
-	</message>
-	<message>
-		<source>guestMarkersCheckBox</source>
-		<translation>Guest Debug Markers:\nInserts any debug markers the game itself has added to the command buffer.\nIf you have this enabled, you should enable Crash Diagnostics.\nUseful for programs like RenderDoc.</translation>
-	</message>
+        <source>collectShaderCheckBox</source>
+        <translation>Samla shaders:\nDu behöver aktivera detta för att redigera shaders med felsökningsmenyn (Ctrl + F10)</translation>
+    </message>
+    <message>
+        <source>crashDiagnosticsCheckBox</source>
+        <translation>Krashdiagnostik:\nSkapar en .yaml-fil med information om Vulkan-tillståndet vid tid för kraschen.\nAnvändbart för felsökning av &apos;Device lost&apos;-fel. Om du har aktiverat detta bör du aktivera felsökningsmarkörer för Värd OCH Gäst.\nFungerar inte på Intel GPUer.\nDu behöver aktivera Vulkan Validation Layers och Vulkan SDK för att detta ska fungera</translation>
+    </message>
+    <message>
+        <source>copyGPUBuffersCheckBox</source>
+        <translation>Kopiera GPU-buffertar:\nGör att man kan komma runt race conditions som involverar GPU submits.\nKan eller kan inte hjälpa med PM4 type 0-kraschar</translation>
+    </message>
+    <message>
+        <source>hostMarkersCheckBox</source>
+        <translation>Felsökningsmarkörer för värd:\nInfogar informationsliknande markörer i emulatorn för specifika AMDGPU-kommandon runt Vulkan-kommandon, så väl som ger resurser felsökningsnamn.\nOm du har detta aktiverat bör du aktivera Kraschdiagnostik.\nAnvändbart för  program som RenderDoc</translation>
+    </message>
+    <message>
+        <source>guestMarkersCheckBox</source>
+        <translation>Felsökningsmarkörer för gäst:\nInfogar felsökningsmarkörer som själva spelet har lagt till i kommandobufferten.\nOm du har aktiverat detta bör du aktivera Kraschdiagnostik.\nAnvändbart för program som RenderDoc</translation>
+    </message>
     <message>
         <source>Release</source>
         <translation>Release</translation>
@@ -1539,6 +1714,30 @@
     <message>
         <source>browseButton</source>
         <translation>Bläddra:\nBläddra efter en mapp att ställa in som sökväg för sparat data</translation>
+    </message>
+    <message>
+        <source>GUI</source>
+        <translation>Gränssnitt</translation>
+    </message>
+    <message>
+        <source>Background Image</source>
+        <translation>Bakgrundsbild</translation>
+    </message>
+    <message>
+        <source>Show Background Image</source>
+        <translation>Visa bakgrundsbild</translation>
+    </message>
+    <message>
+        <source>Opacity</source>
+        <translation>Opacitet</translation>
+    </message>
+    <message>
+        <source>Auto Select</source>
+        <translation>Välj automatiskt</translation>
+    </message>
+    <message>
+        <source>GUIBackgroundImageGroupBox</source>
+        <translation>Bakgrundsbild:\nKontrollerar opaciteten för spelets bakgrundsbild</translation>
     </message>
 </context>
 <context>

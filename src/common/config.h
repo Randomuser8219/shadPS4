@@ -30,6 +30,8 @@ bool getEnableDiscordRPC();
 bool getSeparateUpdateEnabled();
 bool getCompatibilityEnabled();
 bool getCheckCompatibilityOnStartup();
+int getBackgroundImageOpacity();
+bool getShowBackgroundImage();
 
 std::string getLogFilter();
 std::string getLogType();
@@ -49,6 +51,7 @@ void SetUseUnifiedInputConfig(bool use);
 u32 getScreenWidth();
 u32 getScreenHeight();
 s32 getGpuId();
+bool allowHDR();
 
 bool debugDump();
 bool collectShadersForDebug();
@@ -66,6 +69,7 @@ void setCollectShaderForDebug(bool enable);
 void setShowSplash(bool enable);
 void setAutoUpdate(bool enable);
 void setNullGpu(bool enable);
+void setAllowHDR(bool enable);
 void setCopyGPUCmdBuffers(bool enable);
 void setDumpShaders(bool enable);
 void setVblankDiv(u32 value);
@@ -88,6 +92,8 @@ void setGameInstallDirs(const std::vector<std::filesystem::path>& settings_insta
 void setSaveDataPath(const std::filesystem::path& path);
 void setCompatibilityEnabled(bool use);
 void setCheckCompatibilityOnStartup(bool use);
+void setBackgroundImageOpacity(int opacity);
+void setShowBackgroundImage(bool show);
 
 void setCursorState(s16 cursorState);
 void setCursorHideTimeout(int newcursorHideTimeout);
