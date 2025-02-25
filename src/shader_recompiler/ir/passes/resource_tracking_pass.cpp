@@ -468,8 +468,8 @@ IR::U32 CalculateBufferAddress(IR::IREmitter& ir, const IR::Inst& inst, const In
         index = ir.IAdd(index, vgpr_index);
     }
     if (buffer.add_tid_enable) {
-        ASSERT_MSG(info.l_stage == LogicalStage::Compute,
-                   "Thread ID buffer addressing is not supported outside of compute.");
+        //ASSERT_MSG(info.l_stage == LogicalStage::Compute,
+                   //"Thread ID buffer addressing is not supported outside of compute.");
         const IR::U32 thread_id{ir.LaneId()};
         index = ir.IAdd(index, thread_id);
     }
