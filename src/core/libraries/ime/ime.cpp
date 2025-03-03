@@ -305,7 +305,7 @@ int PS4_SYSV_ABI sceImeKeyboardUpdate() {
 }
 
 s32 PS4_SYSV_ABI sceImeOpen(const OrbisImeParam* param, const void* extended) {
-    LOG_INFO(Lib_Ime, "called");
+    LOG_DEBUG(Lib_Ime, "called");
 
     if (!param) {
         return ORBIS_IME_ERROR_INVALID_ADDRESS;
