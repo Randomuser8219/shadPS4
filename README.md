@@ -23,15 +23,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
  <a href="https://github.com/shadps4-emu/shadPS4/stargazers">
         <img src="https://img.shields.io/github/stars/shadps4-emu/shadPS4" width="120">
 </h1>
-
-|               Bloodborne by From Software (TODO add ingame SS)                   |                     KNACK by JAPAN Studio                         |
-| :-----------------------------------------------------------: | :--------------------------------------------------------------------------------------------: |
-| ![Bloodborne screenshot](./documents/Screenshots/1.png) | ![KNACK screenshot](./documents/Screenshots/2.png) |
-
-|                  DRIVECLUB by Evolution Studios                     |                 ???                    |
-| :------------------------------------------------------------------------: | :------------------------------------------------------------------: |
-| ![DRIVECLUB screenshot](./documents/Screenshots/3.png) | TBA |
-
 # General information
 
 **shadPS4** is an early **PlayStation 4** emulator for **Windows**, **Linux** and **macOS** written in C++.
