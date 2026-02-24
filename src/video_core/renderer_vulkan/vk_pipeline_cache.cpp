@@ -337,16 +337,6 @@ const ComputePipeline* PipelineCache::GetComputePipeline() {
     return it->second.get();
 }
 
-bool ShouldSkipShader(u64 shader_hash, const char* shader_type) {
-    static std::vector<u64> skip_hashes = {
-    };
-    if (std::ranges::contains(skip_hashes, shader_hash)) {
-        LOG_WARNING(Render_Vulkan, "Skipped {} shader hash {:#x}.", shader_type, shader_hash);
-        return true;
-    }
-    return false;
-}
-
 bool PipelineCache::RefreshGraphicsKey() {
     std::memset(&graphics_key, 0, sizeof(GraphicsPipelineKey));
     const auto& regs = liverpool->regs;
@@ -545,9 +535,7 @@ bool PipelineCache::RefreshComputeKey() {
     Shader::Backend::Bindings binding{};
     const auto& cs_pgm = liverpool->GetCsRegs();
     const auto cs_params = AmdGpu::GetParams(cs_pgm);
-    if (ShouldSkipShader(cs_params.hash, "71a72db2", "789ec898", "21a668eb")) {
-    return false;
-    }
+    if (cs_params.hash == 0x71a72db2, 0x789ec898, 0x21a668eb) return false;
     std::tie(infos[0], modules[0], fetch_shader, compute_key.value) =
         GetProgram(Shader::Stage::Compute, LogicalStage::Compute, cs_params, binding);
     return true;
